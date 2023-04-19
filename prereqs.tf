@@ -3,7 +3,7 @@
 
 module "vault-prereqs" {
   source               = "./terraform-aws-vault-ent-starter/examples/prereqs_quickstart"
-  resource_name_prefix = "nyoung"
+  resource_name_prefix = "rryjewski"
 }
 
 output "lb_certificate_arn" {

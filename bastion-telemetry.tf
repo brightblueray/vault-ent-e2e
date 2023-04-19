@@ -11,7 +11,7 @@ module "bastion" {
   public_subnet_tags       = { Vault = "public" }                      # changed -nyoung
   vault_lb_sg_id           = module.vault-ent-starter.vault_lb_sg_id   # changed -nyoung
   secrets_manager_arn      = module.vault-prereqs.secrets_manager_arn  # changed -nyoung
-  vault_lb_dns_name        = aws_route53_record.vault_lb.fqdn # changed to match Route53 A record and cert name -nyoung
+  vault_lb_dns_name        = aws_route53_record.vault_lb.fqdn          # changed to match Route53 A record and cert name -nyoung
   aws_iam_instance_profile = module.vault-ent-starter.aws_iam_instance_profile
   key_name                 = aws_key_pair.awskey.key_name           # changed -nyoung
   private_key_pem          = tls_private_key.awskey.private_key_pem # changed -nyoung
@@ -19,9 +19,9 @@ module "bastion" {
 }
 
 output "benchmark_public_ip" {
-  value       = module.bastion.bastion_public_ip
+  value = module.bastion.bastion_public_ip
 }
 
 output "telemetry_public_ip" {
-  value       = module.bastion.telemetry_public_ip
+  value = module.bastion.telemetry_public_ip
 }

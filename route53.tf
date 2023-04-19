@@ -20,12 +20,12 @@ resource "aws_route53_record" "vault_lb" {
 }
 
 variable "route53_a_record" {
-  default     = "vault.nyoung.aws.hashidemos.io"
+  default     = "vault.rryjewski.sbx.hashidemos.io"
   description = "FQDN of the Route53 A record that will resolve to the internal load balancer for the Vault cluster."
 }
 
 variable "hosted_zone" {
-  default     = "nyoung.aws.hashidemos.io"
+  default     = "rryjewski.sbx.hashidemos.io"
   description = "An existing hosted zone within which a Route53 A record can be created."
 }
 

@@ -3,19 +3,21 @@
 
 module "vault-ent-starter" {
   source = "./terraform-aws-vault-ent-starter"
+  # source = hashicorp/vault-ent-starter/aws
 
   # REQUIRED INPUTS
   lb_certificate_arn    = module.vault-prereqs.lb_certificate_arn    # REQUIRED
   leader_tls_servername = module.vault-prereqs.leader_tls_servername # REQUIRED
   private_subnet_ids    = module.vault-prereqs.private_subnet_ids    # REQUIRED
-  resource_name_prefix  = "nyoung"                                   # REQUIRED
+  resource_name_prefix  = "rryjewski"                                # REQUIRED
   secrets_manager_arn   = module.vault-prereqs.secrets_manager_arn   # REQUIRED
   vpc_id                = module.vault-prereqs.vpc_id                # REQUIRED
 
   # optional inputs
   allowed_inbound_cidrs_lb  = ["0.0.0.0/0"]                # optional
   allowed_inbound_cidrs_ssh = ["0.0.0.0/0"]                # optional
-  instance_type             = "m5.xlarge"                  # default
+  # instance_type             = "m5.xlarge"                  # default
+  instance_type             = "t2.micro"                  # default
   key_name                  = aws_key_pair.awskey.key_name # generated from ssh.tf
   lb_type                   = "network"                    # "application" is the other option and default
   node_count                = 5                            # default
